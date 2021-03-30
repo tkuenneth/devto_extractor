@@ -34,8 +34,8 @@ fun main(args: Array<String>) {
         val counter = 1
         rssFeed.forEach {
             val title = it.title.get()
-                .replace("#", "&#x23;")
-                .replace(":", "&#058;")
+                .replace("#", "＃")
+                .replace(":", "：")
             val url = it.link.get()
             val date: String
             val fullDateAndTime: String
