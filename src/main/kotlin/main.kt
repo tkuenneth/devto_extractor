@@ -18,6 +18,7 @@ categories: articles
 
 fun main(args: Array<String>) {
     val baseDir = if (args.isNotEmpty()) args[0] else "./_posts"
+    println("base dir is $baseDir")
     val client = HttpClient.newBuilder().version(HttpClient.Version.HTTP_1_1).build()
     val request = HttpRequest.newBuilder()
         .uri(URI.create("https://dev.to/feed/tkuenneth/"))
@@ -48,6 +49,7 @@ fun main(args: Array<String>) {
             val dir = File("$baseDir${File.separatorChar}$year")
             dir.mkdirs()
             val file = File(dir, "${date}-${counter}.md")
+            println("writing file ${file.absolutePath}")
             val fileContent = template.replace("!!!TITLE!!!", title)
                 .replace("!!!FULL_DATE_AND_TIME!!!", fullDateAndTime)
                 .replace("!!!DATE!!!", date)
