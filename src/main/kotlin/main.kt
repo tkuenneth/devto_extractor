@@ -10,10 +10,18 @@ val template = """
 layout: post
 title: !!!TITLE!!!
 date: !!!FULL_DATE_AND_TIME!!!
-categories: articles
+categories: writing
 ---
-!!!DATE!!! on dev.to  
-[&#x1F4D6; Read article](!!!URL!!!)
+<html>
+<table style="width: 100%; border: none">
+<tr style="background-color: transparent;">
+<td style="width: 100%; border: none">
+<img align="left" style="filter: drop-shadow(0px 0px 4px #a0a0a0); margin-right: 20px;margin-bottom: 10px;" src="/assets/dev-rainbow.png" width="15%">
+I published a new article on dev.to called <a href="!!!URL!!!">!!!TITLE!!!</a>.
+</td>
+</tr>
+</table>
+</html>
 """.trimIndent()
 
 fun main(args: Array<String>) {
